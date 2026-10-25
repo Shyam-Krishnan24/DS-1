@@ -1,0 +1,23 @@
+
+# Kaggle API and dataset downloads
+kaggle==2.2.4
+kagglehub==1.0.2
+
+# Data manipulation and ETL
+pandas==2.3.3
+numpy==2.3.3
+openpyxl==3.1.5
+
+# Statistics and visualization
+scipy==1.16.2
+statsmodels==0.14.5
+matplotlib==3.10.7
+seaborn==0.13.2
+
+# Machine learning and model evaluation
+scikit-learn==1.7.2
+joblib==1.5.2
+
+# SQL database connectivity
+SQLAlchemy==2.0.44
+mysql-connector-python==9.4.0
