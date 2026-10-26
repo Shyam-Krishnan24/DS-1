@@ -1,0 +1,31 @@
+
+
+Total Files: 8
+
+    olist_customers_dataset.csv
+    olist_geolocation_dataset.csv
+    olist_order_items_dataset.csv
+    olist_order_payments_dataset.csv
+    olist_order_reviews_dataset.csv
+    olist_orders_dataset.csv
+    olist_products_dataset.csv
+    olist_sellers_dataset.csv
+
+Missing values:
+
+    1. Reviews dataset
+        - Missing review titles: 88.34%
+        - Missing review messages: 58.70%
+        Decision: Keep all rows. Our analysis mainly uses review_score; missing text doesn't make the score useless.
+   
+    2. Orders dataset
+        - Missing order_delivered_carrier_date: 1.79%
+        - Missing order_delivered_customer_date: 2.98%
+        Decision: Keep missing values. Orders may be cancelled, in progress, or not yet delivered. We'll use only eligible orders for delivery analysis.
+
+        - Missing order_approved_at: 160 rows (0.16%).
+        Decision: Investigate this. We already checked the statuses: most missing approvals belong to cancelled orders, and five belong to created orders. However, 14 delivered orders also have missing approval timestamps, which is unusual.
+
+    3. Products dataset
+        - Missing product_category_name: 0.01%
+        Decision: Keep missing values. We'll use only products with known categories for category analysis.

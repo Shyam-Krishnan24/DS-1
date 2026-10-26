@@ -27,25 +27,14 @@ One limitation: the dataset represents historical Brazilian e-commerce activity,
 ## Project Workflow
 
 1. **Data Ingestion** — Collect Olist CSV datasets.
-
 2. **ETL & Data Cleaning** — Use Pandas and NumPy to inspect, clean, and transform data.
-
 3. **Data Validation** — Check missing values, duplicates, data types, business rules, and table relationships.
-
 4. **Statistics & EDA** — Analyze distributions, outliers, correlations, and business patterns.
-
 5. **SQL Database** — Design tables and store cleaned data.
-
 6. **Power BI 1** — Build historical sales and customer analytics dashboards.
-
 7. **Feature Engineering** — Create meaningful features for machine learning.
-
 8. **Machine Learning** — Train, compare, and tune suitable models.
-
 9. **Model Evaluation** — Evaluate performance, compare with baselines, and select the best model.
-
 10. **SQL Predictions Storage** — Store predictions, timestamps, and model version metadata.
-
 11. **Power BI 2** — Visualize predictions, forecast accuracy, and business recommendations.
-
 12. **Documentation** — Prepare the GitHub README, methodology, findings, evaluation metrics, limitations, and recommendations.
