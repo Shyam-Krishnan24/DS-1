@@ -1,31 +1,28 @@
+OLIST E-COMMERCE DATA SCIENCE PROJECT
+====================================
 
+Current Progress
+----------------
+- Inspected eight Olist CSV datasets and reviewed their columns and data types.
+- Checked missing values and duplicate rows.
+- Validated order, item, product, seller, customer, payment, and review references.
+- Checked the order-item composite key and geolocation fields.
+- Converted order timestamps to datetime for future analysis.
 
-Total Files: 8
+Key Findings
+------------
+- Missing review titles (88.34%) and messages (58.70%) are retained; review scores remain available for analysis.
+- Some order delivery timestamps are missing. These will be considered only where relevant to each analysis.
+- 160 orders (0.16%) have no approval timestamp: 141 cancelled, 5 created, and 14 delivered.
+- Delivery duration for the 14 delivered orders with missing approval timestamps ranges from 10 to 18 days (mean: 12.71; median: 12). This does not explain the missing approval times. Retain these orders and timestamps as recorded; do not invent dates.
+- Product category is missing for 0.01% of products.
+- No unmatched order, item, product, seller, customer, payment, or review references were found in the checks performed.
+- No missing ZIP prefixes or coordinates were found. Multiple geolocation records may share a ZIP prefix, so do not remove them solely for that reason.
 
-    olist_customers_dataset.csv
-    olist_geolocation_dataset.csv
-    olist_order_items_dataset.csv
-    olist_order_payments_dataset.csv
-    olist_order_reviews_dataset.csv
-    olist_orders_dataset.csv
-    olist_products_dataset.csv
-    olist_sellers_dataset.csv
+Next Steps
+----------
+- Complete the ETL and cleaning process; further transformations may be needed during analysis.
+- Perform exploratory data analysis to address the 17 historical business questions.
+- Continue with predictive modelling for the 9 predictive questions.
 
-Missing values:
-
-    1. Reviews dataset
-        - Missing review titles: 88.34%
-        - Missing review messages: 58.70%
-        Decision: Keep all rows. Our analysis mainly uses review_score; missing text doesn't make the score useless.
-   
-    2. Orders dataset
-        - Missing order_delivered_carrier_date: 1.79%
-        - Missing order_delivered_customer_date: 2.98%
-        Decision: Keep missing values. Orders may be cancelled, in progress, or not yet delivered. We'll use only eligible orders for delivery analysis.
-
-        - Missing order_approved_at: 160 rows (0.16%).
-        Decision: Investigate this. We already checked the statuses: most missing approvals belong to cancelled orders, and five belong to created orders. However, 14 delivered orders also have missing approval timestamps, which is unusual.
-
-    3. Products dataset
-        - Missing product_category_name: 0.01%
-        Decision: Keep missing values. We'll use only products with known categories for category analysis.
+The checks documented here are initial inspection and validation, not completion of ETL.
